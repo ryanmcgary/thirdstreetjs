@@ -1,0 +1,19 @@
+body {
+	background:purple;
+}
+
+.blue {
+	background: blue;
+}
+
+h1, h4, div, p {
+	background:black;
+}
+
+#money {
+	color:green;
+}
+
+ul li {
+	color: yellow;
+}

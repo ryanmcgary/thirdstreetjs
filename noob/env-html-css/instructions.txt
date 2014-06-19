@@ -1,0 +1,191 @@
+SET UP NITROUS
+	I'll add this stuff on Saturday, I'm just being lazy right now since we've already set up Nitrous and it was super easy
+
+BORING THEORY STUFF
+	[slide] HTML - Hypertext Markup Language
+	- an HTML document is a document that tells browsers how to structure and display the page
+	- similar to how a .docx file tells Word how to display all of the content of the document
+
+	[slide] Components of an HTML page - this terminology is important
+	- Element - a thing on the HTML page. each element has different purpose and is responsible for different things
+	- Attribute - properties of html element. some html elements have options that you need to provide, and these options are called attributes
+	- Tag - elements on a page are wrapped in brackets < >. a large majority of tags have open and closed tags. these wrap the element and its attributes. people often interchangeably use the term tag and element, but its important to understand what the distinction is
+
+	[slide] Let's take a look at a couple of examples:
+	- <a href="http://www.google.com">Google</a>
+		- a = element
+		- <a href="http://www.google.com"> and </a> = tags (opening and closing)
+		- href="http://www.google.com" = attribute
+		- Google = the text that actually shows up on the page
+
+AWESOME ACTION AND EXAMPLE STUFF
+	Let's open up the index.html file in [FOLDER NAME FOR CLASS 1]. Just like Word needs a .docx extension, browsers need a .html extension to read a plain HTML file*
+
+		* oversimplification, I know, but it's good for the beginner class
+	
+	There's a few areas of interest in this document we're going to cover. First off, at the very top of the document, we have the <!DOCTYPE html> tag. This tells the web browser what version of HTML we're using. Since we're using the latest version, we're just going to use html. Also, because this is a tag, it's going to have a closing tag at the very bottom of the document, </html>.
+
+  Not every tag needs to be closed, and we'll provide you with the small list of exceptions later.
+
+  Every HTML document must have two elements - head and body. If you look at our sample page, you'll see that the head element contains information about our page, otherwise known as metadata. Nothing in the <head> tag will be visible to the person viewing the page. All of this is just information that browser needs.
+
+  In our specific example, we have two elements, the meta and the title. You'll only see <meta> tags in the <head> because they are set aside exclusively for metadata about the page. You can do a lot with <meta> tags, such as specify how the page should behave on mobile devices, provide a description of the page for search engines, and more. The <meta> tag on our page simply tells the browser what character set to use. You'll also notice that the meta element has no closing tag. The <title> tag defines what the browser will have as the name in the tab (need to find a better way to phrase this). To see what I'm referring to, navigate to your public-facing site [NEED TO PRACTICE MAKING THEM DO THIS] and you'll see that at the top of the tab, the title is what's showing up.
+
+  This is a very simple example of a head element. You can learn more about all of this by checking out the recommended reading.
+
+  Next, we have our body element. Everything that is going to be visible on the page needs to be inside this element. Let's take a moment to check out our body element and go over the elements inside of it. First off, the largest thing we're going to see on the page is going to be the h1 element. The HTML specification has h1, h2, h3, h4, h5, and h6 as header elements. h1 is the largest, and h6 is the smallest. You'll see that our sample page already has h1 and h4 elements.
+
+  [ACTION] To see this in action, go ahead and add two more elements: h2 and h6. You can add whatever text you'd like inside of these elements, but I'd recommend adding "All hail the Read Write Build mentors."
+
+  Next, we have the div elements. The <div> tag makes up the building block of the internet. It's used on any site you can think of, because it is just a general block element. What does this mean? We'll go more in-depth on this later, but this simply means that it can be a section on a page, a small portion of a widget, or anything in between [HOW DO I EXPLAIN WHAT A DIV IS TO SOMEONE?]. You'll be using this tag quite frequently.
+
+  And next, we have an example of a p element. The p stands for paragraph, and this tag is often used whenever you see structured or formatted text on a site. It behaves similarly to a div element, but using the correct tag in the correct place is good practice. We'll go over why in a minute.
+
+  HTML also provides us with an element for lists. The ul element stands for unordered list (and yes, there's also an ol element for ordered lists, but no one uses that). Inside of the <ul> tag, each bullet item is inside of a li element (which stands for list item). Finally, we have a span element, which is often used as a modifier for a small amount of text or a small component on the page. <span> tags behave differently from the other elements we've just covered, and we'll show you how in a second.
+
+  [INSERT A BIT ON FORMS] - what do we want to cover and what do we want them to discover on their own?
+
+  Let's also briefly go over the new elements. All of the elements we just went over have been around since the dawn of HTML, but HTML5 introduced a whole slew of new tags in an effort to make HTML more semantic, or readable. This is so that it's easier for humans, as well as computers, to understand the document. 
+
+  Some examples of tags that were introduced in HTML5 include <header>, <nav>, <section>, <article>, and <footer>. They all behave in the same was as <div> and <p> tags, but they're used because they better describe their contents. For example, an <article> tag would often have <p> tags inside of it because an article has paragraphs.
+
+  There are downsides to using these HTML5 tags, however. Since HTML5 introduced these tags later, older web browser don't recognize them. There are, however, ways to solve that little issue known as fallbacks, and we'll dive deeper into those when we start covering javascript.
+
+INTRODUCE CHROME WEB TOOLS
+  This is a good time to take a look at an interesting tool that's going to be incredibly useful for web development. Chrome has a a set of built-in tools called Chrome DevTools. With this toolkit, you can take a look at basically any client-side component of a page and understand what's going on. 
+
+  Right now, we're going to focus on a single tool in the toolit - the Element Inspector, used for looking at how a page is structured and styled. We'll go over how to fully utilize DevTools later on in the course as well as in the advanced modules. There's a lot there, and it will make much more sense in the correct context.
+
+  So to get started, go to your html page that we have open in the browser. Now, right-click on the very first <h1> tag and click on "Inspect Element". Alternatively, you could also press Cmd+Shift+C or Ctrl+Shift+C to open up the DevTools without inspecting a specific element.
+
+  When you open the inspector, you should see three panes. One pane shows all of the HTML on the page. You'll notice that the HTML in this pane is identical to the HTML that you see when you look at the file in Nitrous. The second pane you should observe is called the Console. This is extremely useful when working with Javascript, and we'll be using this more as we progress with the lessons.
+
+  The final pane is the style pane. Styles are what take the boring elements we have on our page right now and turn them into sexy, eye-popping pieces of art. 
+
+  So how do we do that? Let's start by taking a look at our <h1> tag. Wouldn't it be nice if the background was red? Not really, but let's pretend it would be. So let's do that. In the HTML pane of the Inspector, click on the <h1> tag. Now, in the style pane at the very top, you should see something that says element.style with empty brackets. Click anywhere in the brackets, a textbox should show up. Now type the following rule:
+
+    background: red;
+
+  You'll notice that the page changed in real-time (because the Inspector is awesome) and the background for h1 is now red. Congratulations! We're now well on our way to making an awesome page. There is a downside to all of the changes we make in the Inspector, however. Refresh the page and you'll notice that the changes don't save. For us to make sure that the background stays red, no matter when the page is loaded, we need to add this style to our HTML.
+
+  So go back to the index.html file and go to the <h1> tag. We're going to add an attribute to it called style. Here's what your <h1> tag should look like now:
+
+    <h1 style="background:red;">...</h1>
+
+  Now go back to the page in your browser and you'll see that the background is red. If you inspect the element in the Inspector, you'll also notice that the style is already there.
+
+  Let's make some more elements on our page red. Go back to index.html and make the background red for the <h4>, <div>, and <span> tags. This isn't a trick question or anything, it's actually as simple as it looks like it is.
+
+  When you refresh the page again, all of the elements you modified should have red backgrounds.
+
+  [BONUS: WHY DO ALL OF THE ELEMENTS HAVE A RED BACKGROUND ALL THE WAY TO THE END OF THE PAGE, BUT SPAN DOESN'T?]
+
+  This is all fine and dandy, but now let's say we want to change the background to blue for all of these elements. That means we have to go to each element and change the attribute. That's pretty annoying. Now imagine that we have a site with tons of pages - we'd have to go to each page and change the background from red to blue. That's just not feasible.
+
+  So what we need is a way to organize our styles so that we modify them in one place, and then they change everywhere. This is where CSS comes in. 
+
+BORING THEORY STUFF
+  [slide] CSS - Cascading Style Sheets
+  - A way to specify certain visual traits of elements
+  - Set of rules that can be applied to multiple elements across multiple pages 
+
+  [slide] Syntax
+  selector {
+    property: rule;
+  }
+
+  [slide] What is a Selector?
+  - A selector can be a tag (such as p, div, h1, etc.)
+    - CSS selects for tags apply to all of the relevant tags on the page 
+  - A selector can be a class name (one that you make up, such as .btn)
+    - CSS classes in the stylesheet start with .
+    - CSS classes can be used multiple times on the same page
+  - A selector can be an id (one that you make up, such as #splash)
+    - CSS ids in the stylesheet start with #
+    - CSS ids can only be used on one element per page
+
+  [slide] Example
+  p {
+    background: red;
+    font-size: 30px;
+  }
+
+  .pink {
+    background: pink;
+  }
+
+  #splash {
+    font-size: 44px;
+  }
+
+AWESOME ACTION AND EXAMPLE STUFF
+   Go back to your index.html page and remove all of the style attributes you just added to everything. Now, go to the head element, and add the following line right after the <title> tags:
+
+    <link rel="stylesheet" href="style.css">
+
+  Let's break this down real quick. The link element has no closing tag and should only be used in the head element. If a link element is used outside of the head, say in the middle of the page, it will slow down page load time.
+
+  [Note: Aside from the fact that using <link> outside of the head doesn't conform to W3C specs, the content before the <link> tag will rerender when the new stylesheet is loaded with the new styles. Means page will load slower and it will be uglier since the page will flash with the new styles and what have you.]
+
+  The rel attribute tells the browser that we're loading in a stylesheet, and the href attribute links to the stylesheet we're pointing to. You'll recall that this is similar to our <a> tag from earlier - it also had a href attribute.
+
+  Now that this is added to our page, save index and view it in the browser. Whoa! What happened to the page? This is where Inspector starts to come in handy. Inspect black lines on the page.
+
+  Under the element.style in the style pane, you should see a new rule. Looks like something is turning the background black. In the top right, we can see that it's a rule from style.css on line 5 (because it says style.css:5. Whatever is behind the colon is the specific line number.)
+
+  Let's take a look at style.css to see what's going on. Open it up in Nitrous and check out line 5.
+
+  It looks like we're giving every h1, h4, div, and p element a background color of black. That's bad. Change the color here to yellow (because that's better) and refresh the page. Now we can atleast see the words. But we don't want all of the backgrounds to be yellow. We want the p elements to have a blue background. Let's add a rule to style.css at the end of the document:
+
+    p {
+      background: blue;
+    }
+
+  But we didn't remove our old rule of background: yellow, so why did the p class turn blue? This is due to the CASCADE part of Cascading Style Sheets. Cascading Style Sheets are called that because styles literally cascade. Rules that are written later in the style.css document are applied in priority over the rules that are written earlier. This allows you to write general rules for elements and then add more specific rules for one-off situations. 
+
+  [THIS SECTION MIGHT NEED SOME CLEANING UP]
+
+  But we generally want to minimize our global rules for elements. If we set a background color of blue for every p element, it means that if we ever DON'T want a p element to have a blue background, we'll have to undo it. And that's pretty annoying. Realistically, we don't want a blue background for EVERY p tag, so let's delete that rule from style.css Instead, you'll notice that we have a css rule called blue. Let's use that instead.
+
+  Go to index.html and add the following attribute to the <p> tag:
+
+    <p class="blue">...</p>
+
+  What did we just do here? We just added the blue class to our p element. Now, if you go to your site and refresh the page, you'll see that the p tag has a blue background. The great part about this is that we can apply this same attribute to any element on the page and boom, we the background will be blue.
+
+  But if you look at style.css, you'll notice that the rule for the blue class is ABOVE the rule for the elements, and yet it still takes priority. Why is that?
+
+  This is because of the second important rule for css known as order of specificity. The rule for h1, h4, div, and p is applied to the general elements. However, a css class takes priority over a rule applied to an element, and an id takes priority over all styles applied via classes and elements. 
+
+  Let's test this out real quick. See the #money id in style.css? We're going to apply that to one of our list item elements. Go to index.html and apply that to the first li element. We're going to use a different attribute apart from class:
+
+    <li id="money">...</li>
+
+  Now refresh the page and BOOM. The color is now green. This overrides the general rule that every li element inside of a ul element should have yellow text.
+
+  But wait, we can specify that certain elements inside certain elements have certain rules? Yes, you can. You can get as specific as you'd like. In fact, you could technically have the following rule:
+
+    html body ul li {
+      color: yellow;
+    }
+
+  Notice that there's no commas. If there were commas between each of those elements, (as in html, body, ul, li), that would mean you're applying the style to each one of those things. Since there's no comma, it means that every li element inside of every ul element inside of the body element inside of the html element needs to have yellow text. Remember, though, that a class will still override this and an id will override the class.
+
+  As a general rule of thumb, however, you want to avoid being overly specific with CSS, as that defeats the purpose of using it. The point of CSS is to write reusable styles. If you're making a class for each individual element, it defeats the purpose of using CSS in the first place.
+
+  We now have a basic enough understanding of CSS to jump into a CSS framework called Bootstrap. A CSS framework is a set of styles and css structure that are documented and managed by a community. They are effectively best practices so that you don't need to start from scratch when you start working on a project. A good number of sites have common needs, so this gives you a solid groundwork to begin with. 
+
+  This is where we start picking up the pace. You're going to learn how to use bootstrap by reading the documentation, and you're going to use it to modify and create your own portfolio page. The rest of the class is going to be open working to get this done. We'll be walking around helping you guys do this.
+
+  Everything you'll need is in the bootstrap folder on Nitrous. You'll be modifying the file about.html.
+
+  [HOW FAR SHOULD WE GO INTO BOOTSTRAP?]
+
+  
+
+
+
+
+
+
+
